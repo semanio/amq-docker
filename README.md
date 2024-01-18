@@ -9,7 +9,7 @@ I haven't as yet added this to the Docker Repository so you'll have to follow th
 
 Once installed you should be able to try it out via
 
-    docker run -P -d -t amq:amq
+    docker run -P -d -it --name amq1 --env NC_DUPLEX=true --env NC_TTL=5 --env hostname=localhost -p 8161:8161 -p 61616:61616 amq:amq
 
 You can also add network connectors by using the --link argument when running the container. The duplex and TTL settings for these network connectors can also be set using --env variables.
 
