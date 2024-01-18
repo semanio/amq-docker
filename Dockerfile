@@ -24,6 +24,7 @@ RUN echo "alias grep='grep --color=auto'" >> /etc/profile
 
 WORKDIR /home/activemq
 
+# TODO go back to a CURL option? vs copying in a downloaded file
 COPY apache-activemq-5.17.6-bin.tar.gz /home/activemq/apache-mq.tar.gz
 RUN chown -R activemq:activemq apache-mq.tar.gz
 
@@ -56,6 +57,7 @@ RUN chmod u+x ./startup.sh
 
 USER activemq
 
+# TODO get this working again
 # CMD  /home/activemq/apache-activemq-5.17.6/conf/startup.sh
 
 
